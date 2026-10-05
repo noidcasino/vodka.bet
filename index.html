@@ -81,8 +81,14 @@
         .wrap {
             position: relative;
             z-index: 1;
-            width: min(1120px, calc(100% - 2rem));
-            margin: 0 auto;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            min-height: 100vh;
+            padding: 1rem 1.25rem 1.15rem;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
         }
 
         .topbar {
@@ -90,7 +96,15 @@
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
-            padding: 1.1rem 0 0.4rem;
+            flex-shrink: 0;
+            padding: 0;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: stretch;
+            min-height: 0;
         }
 
         .brand {
@@ -181,16 +195,26 @@
         }
 
         .hero {
-            display: grid;
-            align-items: end;
-            min-height: calc(100vh - 88px);
-            padding: 2.4rem 0 3.2rem;
             position: relative;
+            width: 100%;
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 0;
+            min-height: calc(100vh - 5.5rem);
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            max-width: min(36rem, 52vw);
+            padding-bottom: 0.35rem;
         }
 
         .hero-ny {
             position: absolute;
-            right: -0.5rem;
+            right: 0;
             bottom: 0;
             z-index: 2;
             pointer-events: none;
@@ -202,16 +226,10 @@
         .hero-ny img {
             display: block;
             width: auto;
-            height: min(58vh, 420px);
-            max-width: min(55vw, 320px);
+            height: min(52vh, 420px);
+            max-width: min(42vw, 320px);
             object-fit: contain;
             object-position: right bottom;
-        }
-
-        .hero > div {
-            position: relative;
-            z-index: 1;
-            max-width: min(100%, 36rem);
         }
 
         @keyframes floatOrb {
@@ -399,39 +417,74 @@
             font-weight: 600;
         }
 
-        @media (max-width: 860px) {
-            .grid,
-            .split {
-                grid-template-columns: 1fr;
+        @media (min-aspect-ratio: 16/10) and (min-width: 900px) {
+            .wrap {
+                padding: 1.15rem 1.5rem 1.25rem;
             }
 
-            .hero {
-                min-height: auto;
-                padding-top: 1.6rem;
+            .hero-ny img {
+                height: min(56vh, 460px);
+                max-width: min(38vw, 360px);
             }
+        }
 
+        @media (max-width: 900px) {
             .btn {
-                width: auto;
                 min-height: 42px;
                 padding: 0.7rem 1.15rem;
                 font-size: 0.9rem;
                 border-radius: 16px;
             }
 
-            .nav-actions {
-                width: auto;
-                justify-content: flex-end;
+            .hero-copy {
+                max-width: min(34rem, 58vw);
             }
 
-            .hero-cta {
-                width: auto;
+            .hero-ny img {
+                height: min(44vh, 300px);
+                max-width: min(40vw, 240px);
+            }
+        }
+
+        @media (max-aspect-ratio: 10/16), (max-width: 680px) {
+            .wrap {
+                padding: 0.85rem 0.95rem 0.95rem;
+            }
+
+            .hero {
+                min-height: calc(100vh - 5rem);
+            }
+
+            .hero-copy {
+                max-width: calc(100% - 7.5rem);
+                padding-bottom: 0.2rem;
+            }
+
+            .hero-ny {
+                right: 0;
+                bottom: 0;
+            }
+
+            .hero-ny img {
+                height: min(34vh, 240px);
+                max-width: min(46vw, 180px);
+            }
+
+            .hero-brand {
+                font-size: clamp(2.35rem, 11vw, 3.2rem);
+            }
+
+            .hero h1 {
+                max-width: 100%;
+                font-size: clamp(1.15rem, 4.8vw, 1.45rem);
             }
 
             .topbar {
-                flex-direction: row;
                 flex-wrap: wrap;
-                align-items: center;
-                justify-content: space-between;
+            }
+
+            .nav-actions {
+                margin-left: auto;
             }
         }
     </style>
@@ -451,12 +504,7 @@
 
         <main>
             <section class="hero">
-                <picture class="hero-ny">
-                    <source srcset="/image/vodka.avif" type="image/avif">
-                    <source srcset="/image/vodka.webp" type="image/webp">
-                    <img src="/image/vodka.png" alt="vodka casino vodka.bet" width="278" height="640" decoding="async">
-                </picture>
-                <div>
+                <div class="hero-copy">
                     <div class="hero-brand">Vodka Casino</div>
                     <h1>Играй на <span id="tag-slot">актуальном зеркале</span> без лишних шагов</h1>
                     <p>Слоты, live-столы и ставки в одном окне: быстрый вход, прозрачные выплаты и поддержка на русском.</p>
@@ -465,6 +513,11 @@
                         <a class="btn btn-login" href="https://vodka.bet?id=15031" rel="nofollow">Вход</a>
                     </div>
                 </div>
+                <picture class="hero-ny">
+                    <source srcset="/image/vodka.avif" type="image/avif">
+                    <source srcset="/image/vodka.webp" type="image/webp">
+                    <img src="/image/vodka.png" alt="vodka casino vodka.bet" width="278" height="640" decoding="async">
+                </picture>
             </section>
         </main>
     </div>
