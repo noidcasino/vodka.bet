@@ -214,35 +214,27 @@
 
         .hero-ny {
             position: fixed;
-            right: 0 !important;
-            bottom: 0 !important;
-            left: auto !important;
-            top: auto !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: 0;
-            z-index: 2;
+            right: 0;
+            bottom: 0;
+            margin: 0;
+            padding: 0;
+            border: none;
+            z-index: 5;
             pointer-events: none;
             user-select: none;
             line-height: 0;
             font-size: 0;
-            transform: none !important;
-        }
-
-        .hero-ny img,
-        .hero-ny source {
-            display: block;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: 0;
+            width: min(84vw, 640px);
         }
 
         .hero-ny img {
-            width: auto;
-            height: min(104vh, 840px);
-            max-width: min(84vw, 640px);
-            object-fit: contain;
-            object-position: 100% 100%;
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            border: none;
+            vertical-align: bottom;
         }
 
         .hero-brand {
@@ -435,9 +427,8 @@
                 padding: 1.15rem 1.5rem 1.25rem;
             }
 
-            .hero-ny img {
-                height: min(112vh, 920px);
-                max-width: min(76vw, 720px);
+            .hero-ny {
+                width: min(76vw, 720px);
             }
         }
 
@@ -453,9 +444,8 @@
                 max-width: min(34rem, 58vw);
             }
 
-            .hero-ny img {
-                height: min(88vh, 600px);
-                max-width: min(80vw, 480px);
+            .hero-ny {
+                width: min(80vw, 480px);
             }
         }
 
@@ -479,11 +469,7 @@
                 right: 0;
                 bottom: 0;
                 z-index: 1;
-            }
-
-            .hero-ny img {
-                height: min(68vh, 480px);
-                max-width: min(92vw, 360px);
+                width: min(92vw, 360px);
             }
 
             .hero-brand {
@@ -529,14 +515,14 @@
                         <a class="btn btn-login" href="https://vodka.bet?id=15031" rel="nofollow">Вход</a>
                     </div>
                 </div>
-                <picture class="hero-ny">
-                    <source srcset="/image/vodka.avif" type="image/avif">
-                    <source srcset="/image/vodka.webp" type="image/webp">
-                    <img src="/image/vodka.png" alt="vodka casino vodka.bet" width="249" height="420" decoding="async">
-                </picture>
             </section>
         </main>
     </div>
+    <picture class="hero-ny">
+        <source srcset="/image/vodka.avif" type="image/avif">
+        <source srcset="/image/vodka.webp" type="image/webp">
+        <img src="/image/vodka.png" alt="vodka casino vodka.bet" width="249" height="420" decoding="async">
+    </picture>
 
     <script>
         (function () {
