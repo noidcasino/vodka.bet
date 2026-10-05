@@ -199,15 +199,16 @@
             width: 100%;
             flex: 1;
             display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
             padding: 0;
             min-height: calc(100vh - 5.5rem);
         }
 
         .hero-copy {
             position: relative;
-            z-index: 30;
+            z-index: 11;
             max-width: min(36rem, 52vw);
             padding-bottom: 0.35rem;
         }
@@ -219,12 +220,12 @@
             margin: 0;
             padding: 0;
             border: none;
-            z-index: 0;
+            z-index: -1;
             pointer-events: none;
             user-select: none;
             line-height: 0;
             font-size: 0;
-            width: min(34vw, 280px);
+            width: min(42vw, 320px);
         }
 
         .hero-ny picture {
@@ -262,21 +263,19 @@
         }
 
         .hero-brand {
-            position: relative;
-            z-index: 30;
             font-family: "Outfit", sans-serif;
             font-size: clamp(3rem, 9vw, 5.6rem);
             font-weight: 800;
             letter-spacing: -0.05em;
             line-height: 0.95;
             margin-bottom: 1.1rem;
+            padding-right: 0.12em;
             white-space: nowrap;
-            color: #12324f;
-            text-shadow:
-                0 0 10px #eef6fb,
-                0 0 4px #eef6fb,
-                1px 1px 0 #eef6fb,
-                -1px -1px 0 #eef6fb;
+            background-image: linear-gradient(90deg, #1a6fb5 0%, #2ec4a6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
             animation: riseIn 0.8s ease both;
         }
 
@@ -457,7 +456,7 @@
             }
 
             .hero-ny {
-                width: min(32vw, 300px);
+                width: min(38vw, 360px);
             }
         }
 
@@ -491,13 +490,13 @@
                 max-width: calc(100% - 7.5rem);
                 padding-bottom: 0.2rem;
                 margin-bottom: 50px;
-                z-index: 30;
+                z-index: 11;
             }
 
             .hero-ny {
                 right: 0;
                 bottom: 0;
-                z-index: 0;
+                z-index: -1;
                 width: min(55vw, 240px);
             }
 
@@ -524,7 +523,7 @@
     <div class="wrap">
         <header class="topbar">
             <div class="brand">
-                <img id="logo-nav" src="/image/web.app.водка.бет.webp" alt="Vodka Casino" width="42" height="42" title="Главная, далее теги">
+                <img id="logo-nav" src="/image/web.app.vodka.bet.webp" alt="Vodka Casino" width="42" height="42" title="Главная, далее теги">
                 <span>Vodka Casino</span>
             </div>
             <div class="nav-actions">
@@ -535,8 +534,9 @@
 
         <main>
             <section class="hero">
+                <div class="hero-brand">Vodka Casino</div>
                 <div class="hero-copy">
-                    <div class="hero-brand">Vodka Casino</div>
+                    
                     <h1>Играй на <span id="tag-slot">актуальном зеркале</span> без лишних шагов</h1>
                     <p>Слоты, live-столы и ставки в одном окне: быстрый вход, прозрачные выплаты и необязательная верификация.</p>
                     <div class="hero-cta">
