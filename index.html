@@ -207,7 +207,7 @@
 
         .hero-copy {
             position: relative;
-            z-index: 11;
+            z-index: 30;
             max-width: min(36rem, 52vw);
             padding-bottom: 0.35rem;
         }
@@ -224,7 +224,7 @@
             user-select: none;
             line-height: 0;
             font-size: 0;
-            width: min(42vw, 320px);
+            width: min(34vw, 280px);
         }
 
         .hero-ny picture {
@@ -262,16 +262,21 @@
         }
 
         .hero-brand {
+            position: relative;
+            z-index: 30;
             font-family: "Outfit", sans-serif;
             font-size: clamp(3rem, 9vw, 5.6rem);
             font-weight: 800;
             letter-spacing: -0.05em;
             line-height: 0.95;
             margin-bottom: 1.1rem;
-            background: linear-gradient(120deg, #12324f 10%, #1a6fb5 45%, #1a9a80 90%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            white-space: nowrap;
+            color: #12324f;
+            text-shadow:
+                0 0 10px #eef6fb,
+                0 0 4px #eef6fb,
+                1px 1px 0 #eef6fb,
+                -1px -1px 0 #eef6fb;
             animation: riseIn 0.8s ease both;
         }
 
@@ -452,7 +457,7 @@
             }
 
             .hero-ny {
-                width: min(38vw, 360px);
+                width: min(32vw, 300px);
             }
         }
 
@@ -486,7 +491,7 @@
                 max-width: calc(100% - 7.5rem);
                 padding-bottom: 0.2rem;
                 margin-bottom: 50px;
-                z-index: 11;
+                z-index: 30;
             }
 
             .hero-ny {
