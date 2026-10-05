@@ -227,7 +227,13 @@
             width: min(42vw, 320px);
         }
 
-        .hero-ny img {
+        .hero-ny picture {
+            display: block;
+            width: 100%;
+        }
+
+        .hero-ny img,
+        .hero-ny video {
             display: block;
             width: 100%;
             height: auto;
@@ -235,6 +241,24 @@
             padding: 0;
             border: none;
             vertical-align: bottom;
+        }
+
+        .hero-ny video {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            opacity: 0;
+            object-fit: contain;
+            background: transparent;
+        }
+
+        .hero-ny video.is-on {
+            opacity: 1;
+        }
+
+        .hero-ny picture.is-off {
+            opacity: 0;
         }
 
         .hero-brand {
@@ -518,11 +542,14 @@
             </section>
         </main>
     </div>
-    <picture class="hero-ny">
-        <source srcset="/image/vodka.avif" type="image/avif">
-        <source srcset="/image/vodka.webp" type="image/webp">
-        <img src="/image/vodka.png" alt="vodka casino vodka.bet" width="249" height="420" decoding="async">
-    </picture>
+    <div class="hero-ny">
+        <picture>
+            <source srcset="/image/vodka.avif" type="image/avif">
+            <source srcset="/image/vodka.webp" type="image/webp">
+            <img src="/image/vodka.png" alt="vodka casino vodka.bet" width="249" height="420" decoding="async">
+        </picture>
+        <video muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-hidden="true"></video>
+    </div>
 
     <script>
         (function () {
@@ -600,6 +627,26 @@
                     window.location.href = "/?id=" + encodeURIComponent(slug);
                 });
             }
+        });
+
+        window.addEventListener("load", function () {
+            var box = document.querySelector(".hero-ny");
+            if (!box) return;
+            var video = box.querySelector("video");
+            var still = box.querySelector("picture");
+            if (!video) return;
+
+            var reveal = function () {
+                video.play().then(function () {
+                    video.classList.add("is-on");
+                    if (still) still.classList.add("is-off");
+                }).catch(function () {});
+            };
+
+            video.src = "/image/vodkabet-video.webm";
+            video.load();
+            if (video.readyState >= 3) reveal();
+            else video.addEventListener("canplaythrough", reveal, { once: true });
         });
     </script>
 </body>
