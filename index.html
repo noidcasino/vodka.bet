@@ -109,6 +109,7 @@
             border-radius: 14px;
             object-fit: cover;
             box-shadow: 0 8px 18px rgba(26, 111, 181, 0.25);
+            cursor: pointer;
         }
 
         .nav-actions {
@@ -439,7 +440,7 @@
     <div class="wrap">
         <header class="topbar">
             <div class="brand">
-                <img src="/image/web.app.водка.бет.webp" alt="Vodka Casino" width="42" height="42">
+                <img id="logo-nav" src="/image/web.app.водка.бет.webp" alt="Vodka Casino" width="42" height="42" title="Главная, далее теги">
                 <span>Vodka Casino</span>
             </div>
             <div class="nav-actions">
@@ -514,6 +515,35 @@
             var meta = document.querySelector('meta[name="keywords"]');
             if (meta && tags.length) {
                 meta.setAttribute("content", tags.map(function (t) { return t.name; }).join(", "));
+            }
+
+            var logo = document.getElementById("logo-nav");
+            if (logo) {
+                logo.addEventListener("click", function () {
+                    var stepKey = "vodka-logo-step";
+                    var idxKey = "vodka-tag-i";
+                    var step = parseInt(sessionStorage.getItem(stepKey) || "0", 10);
+
+                    if (step < 1) {
+                        sessionStorage.setItem(stepKey, "1");
+                        sessionStorage.setItem(idxKey, "0");
+                        window.location.href = "/";
+                        return;
+                    }
+
+                    var list = Array.isArray(window.SITE_TAGS) ? window.SITE_TAGS : tags;
+                    if (!list.length) {
+                        window.location.href = "/";
+                        return;
+                    }
+
+                    var i = parseInt(sessionStorage.getItem(idxKey) || "0", 10);
+                    if (isNaN(i) || i < 0) i = 0;
+                    var tag = list[i % list.length];
+                    var slug = tag.slug || tag.name;
+                    sessionStorage.setItem(idxKey, String(i + 1));
+                    window.location.href = "/?id=" + encodeURIComponent(slug);
+                });
             }
         });
     </script>
