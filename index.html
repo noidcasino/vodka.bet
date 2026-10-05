@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vodka casino - vodka.bet</title>
+    <meta name="description" content="Vodka Casino и Vodka Bet: слоты, live-столы, быстрый вход, бонусы и актуальное зеркало. Регистрация за минуту, поддержка 24/7.">
+    <meta name="keywords" content="vodka casino, vodka bet, водка казино, водкабет, vodkacasino, vodkabet">
+    <link rel="canonical" href="https://vodka-casino.ru/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="vodka casino">
+    <meta property="og:title" content="vodka casino — официальный сайт vodka.bet">
+    <meta property="og:description" content="Слоты, live-казино, бонусы и быстрый вход на vodka.bet.">
+    <meta property="og:url" content="https://vodka-casino.ru/">
+    <meta property="og:image" content="https://vodka-casino.ru/image/vodka-casino.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vodka Casino">
+    <meta name="twitter:description" content="Официальный вход и регистрация Vodka Casino / Vodka Bet.">
+    <meta name="twitter:image" content="https://vodka-casino.ru/image/vodka-casino.webp">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon-180x180.webp">
+    <link rel="preload" href="/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <style>
+        :root {
+            --ice: #e8f4ff;
+            --frost: #f7fbff;
+            --glass: rgba(255, 255, 255, 0.72);
+            --ink: #132033;
+            --muted: #4d6078;
+            --sky: #3aa0e8;
+            --sky-deep: #1a6fb5;
+            --mint: #2ec4a6;
+            --mint-deep: #1a9a80;
+            --line: rgba(26, 111, 181, 0.14);
+            --shadow: 0 24px 60px rgba(19, 55, 92, 0.14);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Manrope", sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(1200px 600px at 10% -10%, rgba(58, 160, 232, 0.22), transparent 55%),
+                radial-gradient(900px 500px at 90% 0%, rgba(46, 196, 166, 0.18), transparent 50%),
+                linear-gradient(180deg, #f4f9ff 0%, #eef6fb 42%, #f8fcff 100%);
+            min-height: 100vh;
+            line-height: 1.55;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(circle at 50% 20%, black 20%, transparent 75%);
+            opacity: 0.45;
+            z-index: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .wrap {
+            position: relative;
+            z-index: 1;
+            width: min(1120px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.1rem 0 0.4rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: "Outfit", sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            font-size: 1.15rem;
+        }
+
+        .brand img {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            object-fit: cover;
+            box-shadow: 0 8px 18px rgba(26, 111, 181, 0.25);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            min-height: 48px;
+            padding: 0.85rem 1.45rem;
+            border-radius: 18px;
+            font-family: "Outfit", sans-serif;
+            font-weight: 700;
+            font-size: 0.98rem;
+            letter-spacing: 0.01em;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+            user-select: none;
+        }
+
+        .btn:active {
+            transform: translateY(2px) scale(0.99);
+        }
+
+        .btn-reg {
+            color: #fff;
+            background: linear-gradient(180deg, #49b4f3 0%, var(--sky) 48%, var(--sky-deep) 100%);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.45) inset,
+                0 -3px 0 rgba(12, 74, 122, 0.28) inset,
+                0 12px 24px rgba(26, 111, 181, 0.35),
+                0 4px 0 #145a96;
+        }
+
+        .btn-reg:hover {
+            filter: brightness(1.05);
+            transform: translateY(-2px);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.5) inset,
+                0 -3px 0 rgba(12, 74, 122, 0.28) inset,
+                0 16px 28px rgba(26, 111, 181, 0.4),
+                0 5px 0 #145a96;
+        }
+
+        .btn-login {
+            color: #0f4f3f;
+            background: linear-gradient(180deg, #7eefd5 0%, var(--mint) 50%, var(--mint-deep) 100%);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.5) inset,
+                0 -3px 0 rgba(14, 90, 74, 0.28) inset,
+                0 12px 24px rgba(26, 154, 128, 0.32),
+                0 4px 0 #147a64;
+        }
+
+        .btn-login:hover {
+            filter: brightness(1.04);
+            transform: translateY(-2px);
+            box-shadow:
+                0 1px 0 rgba(255, 255, 255, 0.55) inset,
+                0 -3px 0 rgba(14, 90, 74, 0.28) inset,
+                0 16px 28px rgba(26, 154, 128, 0.38),
+                0 5px 0 #147a64;
+        }
+
+        .hero {
+            display: grid;
+            align-items: end;
+            min-height: calc(100vh - 88px);
+            padding: 2.4rem 0 3.2rem;
+            position: relative;
+        }
+
+        .hero-ny {
+            position: absolute;
+            right: -0.5rem;
+            bottom: 0;
+            z-index: 2;
+            pointer-events: none;
+            user-select: none;
+            animation: floatOrb 9s ease-in-out infinite;
+            filter: drop-shadow(0 18px 40px rgba(26, 111, 181, 0.22));
+        }
+
+        .hero-ny img {
+            display: block;
+            width: auto;
+            height: min(58vh, 420px);
+            max-width: min(55vw, 320px);
+            object-fit: contain;
+            object-position: right bottom;
+        }
+
+        .hero > div {
+            position: relative;
+            z-index: 1;
+            max-width: min(100%, 36rem);
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-14px); }
+        }
+
+        .hero-brand {
+            font-family: "Outfit", sans-serif;
+            font-size: clamp(3rem, 9vw, 5.6rem);
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            line-height: 0.95;
+            margin-bottom: 1.1rem;
+            background: linear-gradient(120deg, #12324f 10%, #1a6fb5 45%, #1a9a80 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: riseIn 0.8s ease both;
+        }
+
+        .hero h1 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(1.35rem, 3.4vw, 2rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            max-width: 22ch;
+            margin-bottom: 0.85rem;
+            animation: riseIn 0.9s ease 0.08s both;
+        }
+
+        #tag-slot {
+            font-family: "Manrope", sans-serif;
+            font-weight: 800;
+        }
+
+        .hero p {
+            max-width: 38ch;
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.6rem;
+            animation: riseIn 1s ease 0.14s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            animation: riseIn 1.05s ease 0.2s both;
+        }
+
+        @keyframes riseIn {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .panel {
+            margin: 0 0 2.5rem;
+            padding: 1.6rem;
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            background: var(--glass);
+            backdrop-filter: blur(14px);
+            box-shadow: var(--shadow);
+        }
+
+        .panel h2 {
+            font-family: "Outfit", sans-serif;
+            font-size: 1.45rem;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.55rem;
+        }
+
+        .panel > p {
+            color: var(--muted);
+            max-width: 62ch;
+            margin-bottom: 1.25rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .item {
+            padding: 1.15rem 1.1rem;
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.85));
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            transition: transform 0.2s ease;
+        }
+
+        .item:hover {
+            transform: translateY(-4px);
+        }
+
+        .item strong {
+            display: block;
+            font-family: "Outfit", sans-serif;
+            font-size: 1.05rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .item span {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .note {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.2rem;
+            min-height: 100%;
+        }
+
+        .note .pulse {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--mint);
+            box-shadow: 0 0 0 0 rgba(46, 196, 166, 0.55);
+            animation: pulse 2s infinite;
+            display: inline-block;
+            margin-right: 0.45rem;
+            vertical-align: middle;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(46, 196, 166, 0.5); }
+            70% { box-shadow: 0 0 0 12px rgba(46, 196, 166, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(46, 196, 166, 0); }
+        }
+
+        .steps {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.85rem;
+            align-items: start;
+            padding: 0.9rem 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid var(--line);
+        }
+
+        .num {
+            width: 34px;
+            height: 34px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-family: "Outfit", sans-serif;
+            font-weight: 800;
+            color: #fff;
+            background: linear-gradient(180deg, var(--sky), var(--sky-deep));
+            box-shadow: 0 8px 16px rgba(26, 111, 181, 0.28);
+        }
+
+        footer {
+            padding: 1.4rem 0 2.4rem;
+            color: var(--muted);
+            font-size: 0.92rem;
+            border-top: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            color: var(--sky-deep);
+            font-weight: 600;
+        }
+
+        @media (max-width: 860px) {
+            .grid,
+            .split {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 1.6rem;
+            }
+
+            .btn {
+                width: auto;
+                min-height: 42px;
+                padding: 0.7rem 1.15rem;
+                font-size: 0.9rem;
+                border-radius: 16px;
+            }
+
+            .nav-actions {
+                width: auto;
+                justify-content: flex-end;
+            }
+
+            .hero-cta {
+                width: auto;
+            }
+
+            .topbar {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="topbar">
+            <div class="brand">
+                <img src="/image/web.app.водка.бет.webp" alt="Vodka Casino" width="42" height="42">
+                <span>Vodka Casino</span>
+            </div>
+            <div class="nav-actions">
+                <a class="btn btn-login" href="https://vodka.bet?id=15031" rel="nofollow">Вход</a>
+                <a class="btn btn-reg" href="https://vodka.bet?id=15031" rel="nofollow">Зарегистрироваться</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <picture class="hero-ny">
+                    <source srcset="/image/vodka.avif" type="image/avif">
+                    <source srcset="/image/vodka.webp" type="image/webp">
+                    <img src="/image/vodka.png" alt="vodka casino vodka.bet" width="278" height="640" decoding="async">
+                </picture>
+                <div>
+                    <div class="hero-brand">Vodka Casino</div>
+                    <h1>Играй на <span id="tag-slot">актуальном зеркале</span> без лишних шагов</h1>
+                    <p>Слоты, live-столы и ставки в одном окне: быстрый вход, прозрачные выплаты и поддержка на русском.</p>
+                    <div class="hero-cta">
+                        <a class="btn btn-reg" href="https://vodka.bet?id=15031" rel="nofollow">Зарегистрироваться</a>
+                        <a class="btn btn-login" href="https://vodka.bet?id=15031" rel="nofollow">Вход</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        (function () {
+            var slot = document.getElementById("tag-slot");
+            if (!slot) return;
+            var id = (new URLSearchParams(window.location.search).get("id") || "").trim();
+            if (!id) return;
+            try { id = decodeURIComponent(id); } catch (e) {}
+            slot.textContent = id;
+            document.title = id + " — vodka.bet";
+        })();
+    </script>
+    <script src="/tags.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var slot = document.getElementById("tag-slot");
+            if (!slot) return;
+
+            var params = new URLSearchParams(window.location.search);
+            var id = (params.get("id") || "").trim();
+            try { id = decodeURIComponent(id); } catch (e) {}
+
+            var tags = Array.isArray(window.SITE_TAGS) ? window.SITE_TAGS : [];
+            var name = "";
+
+            if (id) {
+                var idLower = id.toLowerCase();
+                var found = tags.find(function (t) {
+                    var slug = String(t.slug || "");
+                    var n = String(t.name || "");
+                    return slug === id || n === id ||
+                        slug.toLowerCase() === idLower ||
+                        n.toLowerCase() === idLower;
+                });
+                name = found ? found.name : id;
+            } else if (tags.length) {
+                name = tags[Math.floor(Math.random() * tags.length)].name;
+            }
+
+            if (name) {
+                slot.textContent = name;
+                document.title = name + " — vodka.bet";
+            }
+
+            var meta = document.querySelector('meta[name="keywords"]');
+            if (meta && tags.length) {
+                meta.setAttribute("content", tags.map(function (t) { return t.name; }).join(", "));
+            }
+        });
+    </script>
+</body>
+</html>
