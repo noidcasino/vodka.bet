@@ -214,25 +214,35 @@
 
         .hero-ny {
             position: fixed;
-            right: 0;
-            bottom: 0;
-            margin: 0;
-            padding: 0;
+            right: 0 !important;
+            bottom: 0 !important;
+            left: auto !important;
+            top: auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0;
             z-index: 2;
             pointer-events: none;
             user-select: none;
             line-height: 0;
-            filter: drop-shadow(0 18px 40px rgba(26, 111, 181, 0.22));
+            font-size: 0;
+            transform: none !important;
+        }
+
+        .hero-ny img,
+        .hero-ny source {
+            display: block;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0;
         }
 
         .hero-ny img {
-            display: block;
             width: auto;
             height: min(104vh, 840px);
             max-width: min(84vw, 640px);
-            margin: 0;
             object-fit: contain;
-            object-position: right bottom;
+            object-position: 100% 100%;
         }
 
         .hero-brand {
@@ -522,7 +532,7 @@
                 <picture class="hero-ny">
                     <source srcset="/image/vodka.avif" type="image/avif">
                     <source srcset="/image/vodka.webp" type="image/webp">
-                    <img src="/image/vodka.png" alt="vodka casino vodka.bet" width="278" height="640" decoding="async">
+                    <img src="/image/vodka.png" alt="vodka casino vodka.bet" width="249" height="420" decoding="async">
                 </picture>
             </section>
         </main>
