@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
+Allow: /data/
+Allow: /data/published.json
+Allow: /*?id=
+Allow: /anchors.html
+Allow: /llms.txt
+Allow: /llms-full.txt
+
 Sitemap: https://vodka-casino.ru/sitemap.xml
