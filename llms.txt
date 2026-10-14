@@ -2,6 +2,7 @@
 
 Сайт: https://vodka-casino.ru/
 Каталог: https://vodka-casino.ru/anchors.html
+AMP: https://vodka-casino.ru/amp.html
 Полный список: https://vodka-casino.ru/llms-full.txt
 Sitemap: https://vodka-casino.ru/sitemap.xml
 

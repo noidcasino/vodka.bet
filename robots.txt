@@ -4,6 +4,7 @@ Allow: /data/
 Allow: /data/published.json
 Allow: /*?id=
 Allow: /anchors.html
+Allow: /amp.html
 Allow: /llms.txt
 Allow: /llms-full.txt
 
