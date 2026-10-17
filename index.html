@@ -16,19 +16,26 @@
       return dt.toLocaleDateString("ru-RU",{day:"numeric",month:"long",year:"numeric"});
     }catch(e){ return String(d); }
   }
-  function mdHtml(raw){
+  function mdHtml(raw, tag){
     var s=esc(String(raw||""));
+    var Водка_казино_вход_и_рабочее_зеркало=String(tag||"").trim();
     s=s.replace(/^#\s?(.+)$/gm,"<h1>$1</h1>");
     s=s.replace(/^##\s?(.+)$/gm,"<h2>$1</h2>");
-    s=s.replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s*=(\d+)x(\d+)\s*(center|leftup)?)?\)/g,function(_,alt,src,w,h,align){
+    s=s.replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s*=(\d+)x(\d+)\s*(center|leftup)?)?\)/g,function(_,anchor,src,w,h,align){
+      if(!Водка_казино_вход_и_рабочее_зеркало) Водка_казино_вход_и_рабочее_зеркало=String(anchor||"");
+      if(/\/image\/vodka\.(png|webp)(\?[^)\s]*)?$/i.test(src)){
+        var base=src.replace(/vodka\.(png|webp)/i,"vodka.webp");
+        var u512=base, u139=base.replace(/vodka\.webp/i,"vodka-139.webp"), u19=base.replace(/vodka\.webp/i,"vodka-19.webp"), u15=base.replace(/vodka\.webp/i,"vodka-15.webp"), u37=base.replace(/vodka\.webp/i,"vodka-37.webp"), u63=base.replace(/vodka\.webp/i,"vodka-63.webp");
+        return '<figure class=""><img loading="lazy" decoding="async" width="512" height="512" src="'+u512+'" alt="'+Водка_казино_вход_и_рабочее_зеркало+'" class="wp-image-512" style="width: 512px" srcset="'+u512+' 512w, '+u139+' 139w, '+u19+' 19w, '+u15+' 15w, '+u37+' 37w, '+u63+' 63w" sizes="auto, (max-width: 512px) 100vw, 512px"></figure>';
+      }
       var cls=align?(' class="'+align+'"'):"";
       var wh=(w&&h)?(' width="'+w+'" height="'+h+'"'):"";
-      return '<img src="'+src+'" alt="'+alt+'" title="'+alt+'"'+wh+cls+' loading="lazy">';
+      return '<img src="'+src+'" alt="'+Водка_казино_вход_и_рабочее_зеркало+'" title="'+Водка_казино_вход_и_рабочее_зеркало+'"'+wh+cls+' loading="lazy">';
     });
     s=s.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g,'<a href="$2" rel="follow">$1</a>');
     s=s.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>");
     s=s.split(/\n{2,}/).map(function(block){
-      if(/^<h[12]>/.test(block)||/^<img /.test(block)) return block;
+      if(/^<h[12]>/.test(block)||/^<img /.test(block)||/^<figure[\s>]/.test(block)) return block;
       return "<p>"+block.replace(/\n/g,"<br>")+"</p>";
     }).join("");
     return s;
@@ -107,7 +114,7 @@
     dateEl.textContent=fmtDate(r.date);
     if(r.date) dateEl.setAttribute("datetime", r.date);
     document.getElementById("pub-meta").hidden=false;
-    document.getElementById("pub-body").innerHTML=mdHtml(r.text);
+    document.getElementById("pub-body").innerHTML=mdHtml(r.text, name);
     var tagsEl=document.getElementById("pub-tags");
     var parts=String(r.tags||"").split(",").map(function(t){return t.trim();}).filter(Boolean);
     tagsEl.innerHTML=parts.map(function(t){
