@@ -1,7 +1,7 @@
 # Vodka Casino / vodka.bet
 
 Сайт: https://vodka-casino.ru/
-Каталог: https://vodka-casino.ru/anchors.html
+Каталог: https://vodka-casino.ru/Core-vodka-casino.html
 AMP: https://vodka-casino.ru/amp.html
 Полный список: https://vodka-casino.ru/llms-full.txt
 Sitemap: https://vodka-casino.ru/sitemap.xml
